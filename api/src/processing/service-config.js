@@ -41,7 +41,8 @@ export const services = {
             "p/:postId",
             ":username/p/:postId",
             "tv/:postId",
-            "stories/:username/:storyId"
+            "stories/:username/:storyId",
+            "share/:shareId"
         ],
         altDomains: ["ddinstagram.com"],
     },
@@ -64,8 +65,21 @@ export const services = {
     },
     reddit: {
         patterns: [
+            "comments/:id",
+
+            "r/:sub/comments/:id",
             "r/:sub/comments/:id/:title",
-            "user/:user/comments/:id/:title"
+            "r/:sub/comments/:id/comment/:commentId",
+
+            "user/:user/comments/:id",
+            "user/:user/comments/:id/:title",
+            "user/:user/comments/:id/comment/:commentId",
+
+            "r/u_:user/comments/:id",
+            "r/u_:user/comments/:id/:title",
+            "r/u_:user/comments/:id/comment/:commentId",
+
+            "r/:sub/s/:shareId"
         ],
         subdomains: "*",
     },
